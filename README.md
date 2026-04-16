@@ -1,3 +1,11 @@
+# ret2win - Buffer Overflow Exploit
+Soluzione per l'esercizio ret2win di [ROPEmporium](https://ropemporium.com/)
+
+## Obbiettivo
+Sfruttare un buffer overflow per reindirizzare l'esecuzione dle programma verso la funzione "ret2win" ch stampa la flag
+
+---
+
 ## 1. Calcolo offset
 Per trovare il numero di byte necessari per raggiungere il return address sullo stack:
 - Generato cyclic paattern di 100 byte con pwntools
@@ -16,6 +24,7 @@ Il risultato è un offset di 40 byte (32 byte del buffer e 8 byte RBP)
 ## 2. Allineamento staack
 Su x86-64 lo stack, prima di chiamare funzioni come "printf" o "fopen", vaa allineaato a 16 byte. Per fare cio ho aggiunto un gadgeet "ret" prima dell'indirizzo di "ret2win"
 
+---
 
 ## Esecuzione
 
